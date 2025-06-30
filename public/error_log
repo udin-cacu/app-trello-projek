@@ -1,0 +1,2 @@
+[15-Mar-2021 05:31:26 Asia/Jakarta] PHP Warning:  require(/home/dopx7148/public_html/pos/../vendor/autoload.php): failed to open stream: No such file or directory in /home/dopx7148/public_html/pos/index.php on line 24
+[15-Mar-2021 05:31:26 Asia/Jakarta] PHP Fatal error:  require(): Failed opening required '/home/dopx7148/public_html/pos/../vendor/autoload.php' (include_path='.:/opt/cpanel/ea-php74/root/usr/share/pear') in /home/dopx7148/public_html/pos/index.php on line 24
