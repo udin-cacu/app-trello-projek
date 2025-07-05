@@ -3,30 +3,30 @@
         <div class="modal-content">
             
             <div class="module module-login">
-                        <div class="module-head">
-                            <h3>Add WorkSpace</h3>
-                        </div>
-                    <form class="form-vertical">
-                         @csrf
-                        <div class="module-body">
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    <input class="span12" type="text" id="nama" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    <input class="span12" type="text" id="tipe" placeholder="Password">
-                                </div>
-                            </div>
-                            <div class="control-group">
-                                <div class="controls row-fluid">
-                                    <input class="span12" type="text" id="deskripsi" placeholder="Password">
-                                </div>
-                            </div>
-                        </div>
-                    
+                <div class="module-head">
+                    <h3>Add WorkSpace</h3>
                 </div>
+                <form class="form-vertical">
+                   @csrf
+                   <div class="module-body">
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="nama" placeholder="Nama Progres">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="tipe" placeholder="Tipe">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="deskripsi" placeholder="Deskripsi">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
             <div class="modal-footer tombol">
                 <table width="100%">
                     <tr>
@@ -42,9 +42,9 @@
                     </tr> 
                 </table>
             </div>
-            </form>
-        </div>
+        </form>
     </div>
+</div>
 </div>
 
 <div class="modal fade" id="delete" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">

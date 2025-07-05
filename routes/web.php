@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('splash.index');
+	return view('splash.index');
 });
 
 Auth::routes();
@@ -24,28 +24,35 @@ Route::group(['middleware' => 'auth'], function(){
 	Route::get('/home', 'HomeController@index')->name('home');
 
 	//WORKSPACE
-Route::get('/workspace', 'WorkspaceController@index')->name('workspace.index');
-Route::get('/workspace/data', 'WorkspaceController@data')->name('workspace.data');
-Route::post('/workspace/store', 'WorkspaceController@store')->name('workspace.store');
-Route::post('/workspace/delete', 'WorkspaceController@delete')->name('workspace.delete');
-Route::post('/workspace/edit', 'WorkspaceController@edit')->name('workspace.edit');
-Route::post('/workspace/update', 'WorkspaceController@update')->name('workspace.update');
+	Route::get('/workspace', 'WorkspaceController@index')->name('workspace.index');
+	Route::get('/workspace/data', 'WorkspaceController@data')->name('workspace.data');
+	Route::post('/workspace/store', 'WorkspaceController@store')->name('workspace.store');
+	Route::post('/workspace/delete', 'WorkspaceController@delete')->name('workspace.delete');
+	Route::post('/workspace/edit', 'WorkspaceController@edit')->name('workspace.edit');
+	Route::post('/workspace/update', 'WorkspaceController@update')->name('workspace.update');
 
 //BOARD
-Route::get('/board', 'BoardController@index')->name('board.index');
-Route::get('/board/data', 'BoardController@data')->name('board.data');
-Route::post('/board/store', 'BoardController@store')->name('board.store');
-Route::post('/board/delete', 'BoardController@delete')->name('board.delete');
-Route::post('/board/edit', 'BoardController@edit')->name('board.edit');
-Route::post('/board/update', 'BoardController@update')->name('board.update');
-Route::get('/board/{id}', 'BoardController@show')->name('board.show');
+	Route::get('/board', 'BoardController@index')->name('board.index');
+	Route::get('/board/data', 'BoardController@data')->name('board.data');
+	Route::post('/board/store', 'BoardController@store')->name('board.store');
+	Route::post('/board/delete', 'BoardController@delete')->name('board.delete');
+	Route::post('/board/edit', 'BoardController@edit')->name('board.edit');
+	Route::post('/board/update', 'BoardController@update')->name('board.update');
+	Route::get('/board/{id}', 'BoardController@show')->name('board.show');
+	Route::post('/update-status', 'BoardController@updateStatus')->name('update.status');
 
 //KATEGORI
-Route::get('/kategori', 'KategoriController@index')->name('kategori.index');
-Route::get('/kategori/data', 'KategoriController@data')->name('kategori.data');
-Route::post('/kategori/store', 'KategoriController@store')->name('kategori.store');
-Route::post('/kategori/delete', 'KategoriController@delete')->name('kategori.delete');
-Route::post('/kategori/edit', 'KategoriController@edit')->name('kategori.edit');
-Route::post('/kategori/update', 'KategoriController@update')->name('kategori.update');
+	Route::get('/kategori', 'KategoriController@index')->name('kategori.index');
+	Route::get('/kategori/data', 'KategoriController@data')->name('kategori.data');
+	Route::post('/kategori/store', 'KategoriController@store')->name('kategori.store');
+	Route::post('/kategori/delete', 'KategoriController@delete')->name('kategori.delete');
+	Route::post('/kategori/edit', 'KategoriController@edit')->name('kategori.edit');
+	Route::post('/kategori/update', 'KategoriController@update')->name('kategori.update');
+
+//BOARD DETAILS
+	Route::post('/boarddetail/store', 'BoardDetailsController@store')->name('boarddetail.store');
+	Route::post('/boarddetail/delete', 'BoardDetailsController@delete')->name('boarddetail.delete');
+	Route::post('/boarddetail/edit', 'BoardDetailsController@edit')->name('boarddetail.edit');
+	Route::post('/boarddetail/update', 'BoardDetailsController@update')->name('boarddetail.update');
 
 });

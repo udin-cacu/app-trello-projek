@@ -7,29 +7,31 @@
                     <h3>Add WorkSpace</h3>
                 </div>
                 <form class="form-vertical">
-                   @csrf
-                   <input type="hidden" id="boardid" name="board_id">
-                   <div class="module-body">
+                 @csrf
+                 <div class="module-body">
                     <div class="control-group">
                         <div class="controls row-fluid">
-                            <label>Title</label>
-                            <input class="span12" type="text" id="title" placeholder="title">
+                            <input class="span12" type="text" id="nama" placeholder="Nama Progres">
                         </div>
                     </div>
                     <div class="control-group">
                         <div class="controls row-fluid">
-                            <label>Deskipsi</label>
-                            <textarea class="span12" id="deskripsi"></textarea>
+                            <input class="span12" type="text" id="tipe" placeholder="Tipe">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="deskripsi" placeholder="Deskripsi">
                         </div>
                     </div>
                 </div>
-
+                
             </div>
             <div class="modal-footer tombol">
                 <table width="100%">
                     <tr>
                         <td>
-                            <button type="button" onclick="SimpanBoard();" class="btn btn-small btn-success">Simpan</button> 
+                            <button type="button" onclick="Simpan();" class="btn btn-small btn-success">Simpan</button> 
                         </td>
                         <td width="5%">
                             &nbsp;
@@ -128,4 +130,50 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Board -->
+<div class="modal fade" id="newboard" tabindex="-1" role="dialog" aria-labelledby="modal-default" aria-hidden="true">
+    <div class="modal-dialog modal- modal-dialog-centered modal-" role="document">
+        <div class="modal-content">
+
+            <div class="module module-login">
+                <div class="module-head">
+                    <h3>Add Board</h3>
+                </div>
+                <form class="form-vertical">
+                 @csrf
+                 <input type="hidden" id="workid">
+                 <div class="module-body">
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="title" placeholder="Nama Title">
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls row-fluid">
+                            <input class="span12" type="text" id="background" placeholder="Background">
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="modal-footer tombol">
+                <table width="100%">
+                    <tr>
+                        <td>
+                            <button type="button" onclick="SimpanBoard();" class="btn btn-small btn-success">Simpan</button> 
+                        </td>
+                        <td width="5%">
+                            &nbsp;
+                        </td>
+                        <td>
+                            <button type="button" class="btn btn-small btn-inverse" data-dismiss="modal">Batal</button> 
+                        </td>
+                    </tr> 
+                </table>
+            </div>
+        </form>
+    </div>
+</div>
 </div>
