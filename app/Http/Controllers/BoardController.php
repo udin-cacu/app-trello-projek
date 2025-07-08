@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Board;
 use App\Workspace;
 use App\BoardDetail;
+use App\Users;
 
 class BoardController extends Controller
 {
@@ -48,13 +49,18 @@ class BoardController extends Controller
         ->first();
         
         $lists = BoardDetail::where('board_id', $board->id)->where('status', 'list')->get();
+
         $progres = BoardDetail::where('board_id', $board->id)->where('status', 'progres')->get();
+
         $cek = BoardDetail::where('board_id', $board->id)->where('status', 'cek')->get();
+
         $selesai = BoardDetail::where('board_id', $board->id)->where('status', 'selesai')->get();
 
-        //dd($lists);
+        $user = Users::all();
 
-        return view('board.show',compact('request','board','lists','progres','cek','selesai'));
+        //dd($user);
+
+        return view('board.show',compact('request','board','lists','progres','cek','selesai','user'));
     }
 
     /*public function updateStatus(Request $request)

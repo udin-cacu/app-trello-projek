@@ -12,4 +12,12 @@ class BoardDetail extends Model
     protected $table = 'board_details';
     protected $fillable = ['title'];
     protected $primaryKey = 'id';
+
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'user_board_details', 'board_detail_id', 'user_id');
+    }
+
+
 }

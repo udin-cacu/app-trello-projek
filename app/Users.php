@@ -11,4 +11,6 @@ class Users extends Model
     protected $primaryKey = 'id';
 
     protected $hidden = ['password',  'remember_token'];
+
+    
 }

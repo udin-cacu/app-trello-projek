@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Workspace;
+use App\UserWorkspaces;
+use Auth;
 
 class WorkspaceController extends Controller
 {
@@ -14,7 +16,7 @@ class WorkspaceController extends Controller
     	return view('workspace.index', compact('workspace'))*/;
     }
 
-     public function data(Request $request)
+    public function data(Request $request)
     {
         date_default_timezone_set('Asia/Jakarta');
         $date = date('Y-m-d');
@@ -29,14 +31,23 @@ class WorkspaceController extends Controller
 
         date_default_timezone_set('Asia/Jakarta');
         
+        $user = Auth::user();
 
-            $work = new Workspace();
-            $work->name = $request->name;
-            $work->type = $request->type;
-            $work->description= $request->description;
-            $work->save();
+        $work = new Workspace();
+        $work->name = $request->name;
+        $work->type = $request->type;
+        $work->description= $request->description;
+        $work->save();
 
 
-        return response()->json($work);
+        $userworkspace = new UserWorkspaces();
+        $userworkspace->user_id = $user->id;
+        $userworkspace->workspace_id = $work->id;
+        $userworkspace->save();
+
+        $data = 1;
+
+
+        return response()->json($data);
     }
 }

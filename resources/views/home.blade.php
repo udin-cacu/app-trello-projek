@@ -101,7 +101,9 @@
             timer: 2000,
           });
 
-          setTimeout(function(){ window.location.href = '/home'; }, 2000);
+          setTimeout(function() {
+            location.reload();
+          }, 2000);
 
         }
 

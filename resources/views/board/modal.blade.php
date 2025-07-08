@@ -4,12 +4,12 @@
 
             <div class="module module-login">
                 <div class="module-head">
-                    <h3>Add WorkSpace</h3>
+                    <h3>Add Board Detail</h3>
                 </div>
                 <form class="form-vertical">
-                   @csrf
-                   <input type="hidden" id="boardid" name="board_id">
-                   <div class="module-body">
+                 @csrf
+                 <input type="hidden" id="boardid" name="board_id">
+                 <div class="module-body">
                     <div class="control-group">
                         <div class="controls row-fluid">
                             <label>Title</label>
@@ -17,31 +17,41 @@
                         </div>
                     </div>
                     <div class="control-group">
-                        <div class="controls row-fluid">
-                            <label>Deskipsi</label>
-                            <textarea class="span12" id="deskripsi"></textarea>
-                        </div>
+                        <label class="control-label">User</label>
+                        <div class="controls row-fluid" id="user-checkboxes">
+                          @foreach($user as $u)
+                          <label class="checkbox inline" style="margin-right:10px;">
+                              <input type="checkbox" name="user_id[]" value="{{ $u->id }}"> {{ $u->name }}
+                          </label>
+                          @endforeach
+                      </div>
+                  </div>
+                  <div class="control-group">
+                    <div class="controls row-fluid">
+                        <label>Deskipsi</label>
+                        <textarea class="span12" id="deskripsi"></textarea>
                     </div>
                 </div>
+            </div>
 
-            </div>
-            <div class="modal-footer tombol">
-                <table width="100%">
-                    <tr>
-                        <td>
-                            <button type="button" onclick="SimpanBoard();" class="btn btn-small btn-success">Simpan</button> 
-                        </td>
-                        <td width="5%">
-                            &nbsp;
-                        </td>
-                        <td>
-                            <button type="button" class="btn btn-small btn-inverse" data-dismiss="modal">Batal</button> 
-                        </td>
-                    </tr> 
-                </table>
-            </div>
-        </form>
-    </div>
+        </div>
+        <div class="modal-footer tombol">
+            <table width="100%">
+                <tr>
+                    <td>
+                        <button type="button" onclick="SimpanBoard();" class="btn btn-small btn-success">Simpan</button> 
+                    </td>
+                    <td width="5%">
+                        &nbsp;
+                    </td>
+                    <td>
+                        <button type="button" class="btn btn-small btn-inverse" data-dismiss="modal">Batal</button> 
+                    </td>
+                </tr> 
+            </table>
+        </div>
+    </form>
+</div>
 </div>
 </div>
 
